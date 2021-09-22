@@ -1,0 +1,41 @@
+.headline {
+    background: linear-gradient(67deg, #fafeffbd, #ffffffe0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0px;
+    border-radius: -5px;
+}
+
+.headline-right {border-radius: 17px;overflow: hidden;width: 48%;}
+
+.h1 {
+    font-size: 41px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    line-height: 1.5;
+}
+
+.headline-left {
+    padding: 19px;
+}
+
+.h2 {
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.h2 {}
+
+.button {
+    background: linear-gradient(67deg, #006a79bd, #91e0ec);
+    width: fit-content;
+    padding: 8px;
+    font-size: 20px;
+    font-family: system-ui;
+    font-weight: bolder;
+    color: white;
+}

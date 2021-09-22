@@ -1,0 +1,67 @@
+.login {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.lhead {
+    font-size: 47px;
+    font-family: inherit;
+    padding: 10px 0;
+}
+
+.lhead1 {
+    font-size: 20px;
+    font-family: monospace;
+    padding: 10px;
+}
+
+.lhead2 {
+    font-size: 15px;
+    font-family: none;
+    padding: 9px;
+    /* border: 1px solid rgb(155 157 173); */
+    background: rgb(184 220 222);
+    color: #155e69;
+}
+
+.lhead3 {
+    display: flex;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head4 {
+    font-size: 20px;
+    font-family: -webkit-pictograph;
+    padding: 20px;
+    font-weight: bolder;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.fieldhead {
+    font-size: 13px;
+    font-family: monospace;
+    /* padding: 10px; */
+}
+
+.fieldinput {
+    padding: 7px 0;
+}
+
+.fieldinput input {
+    padding: 10px 2px;
+    width: 100%;
+}

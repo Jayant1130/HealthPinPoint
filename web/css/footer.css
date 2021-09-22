@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: -webkit-pictograph;
+    padding: 30px 0;
+    background: #b1f1e8eb;
+}
+
+
+.fdivhead {
+    font-weight: bolder;
+}
+
+.developer {
+    padding: 10px 31px;
+    font-family: system-ui;
+    font-size: 14px;
+    background: #e5fffe;
+    margin: 16px 0;
+    line-height: 1.5;
+    border-top: 1px solid #00000036;
+    color: rgb(103 94 94);
+}
+.flogo {
+    display: flex;
+}
+.fdivcon {
+    padding: 8px 0px 0 0;
+}
