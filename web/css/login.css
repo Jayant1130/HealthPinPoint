@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     background: white;
+    max-width: 600px;
 }
 
 .lhead {
@@ -64,4 +65,17 @@
 .fieldinput input {
     padding: 10px 2px;
     width: 100%;
+}
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+.forget {
+    padding: 11px 3px;
+}
+
+a {
+    text-decoration: none;
 }
