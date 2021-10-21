@@ -5,6 +5,7 @@ import Model.Civilian;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CivilianDAO {
@@ -14,7 +15,7 @@ public class CivilianDAO {
         con=MyConnection.getConnection();
         String sql="INSERT INTO civilian VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?);";
         ps=con.prepareStatement(sql);
-        ps.setInt(1, c.getHealthID());
+        ps.setInt(1, Integer.parseInt(c.getHealthID()));
         ps.setInt(2, c.getDistrictID());
         ps.setString(3, c.getName());
         ps.setString(4, c.getMobileNo());
@@ -33,6 +34,24 @@ public class CivilianDAO {
             return n;
         }else{
             return 0;
+        }
+    }
+    public boolean isAadharExist(String aadhar) throws SQLException, IOException
+    {
+        Connection con=null;
+        PreparedStatement ps=null;
+        con=MyConnection.getConnection();
+        String sql="select * from civilian where HealthID = ?";
+        ps=con.prepareStatement(sql);
+        ps.setInt(1, Integer.parseInt(aadhar));
+        ResultSet rs = ps.executeQuery();
+        if(rs.next())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

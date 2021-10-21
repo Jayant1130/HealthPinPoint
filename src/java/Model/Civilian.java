@@ -1,8 +1,8 @@
 package Model;
 
 public class Civilian {
-        private int HealthID, DistrictID;
-        private String Name, MobileNo, Address, DOB, EmergencyNo, Photo, AadharImage, Email, Religion, Diet, MaritalStatus;   
+        private int  DistrictID;
+        private String HealthID, Name, MobileNo, Address, DOB, EmergencyNo, Photo, AadharImage, Email, Religion, Diet, MaritalStatus;   
 
     public String getAadharImage() {
         return AadharImage;
@@ -20,14 +20,16 @@ public class Civilian {
         this.MaritalStatus = MaritalStatus;
     }
 
-        
-    public int getHealthID() {
+    public String getHealthID() {
         return HealthID;
     }
 
-    public void setHealthID(int HealthID) {
+    public void setHealthID(String HealthID) {
         this.HealthID = HealthID;
     }
+
+        
+ 
 
     public int getDistrictID() {
         return DistrictID;
