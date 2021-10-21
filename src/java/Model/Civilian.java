@@ -2,8 +2,25 @@ package Model;
 
 public class Civilian {
         private int HealthID, DistrictID;
-        private String Name, MobileNo, Address, DOB, EmergencyNo, Photo, Email, Religion, Diet, MeritalStatus;   
+        private String Name, MobileNo, Address, DOB, EmergencyNo, Photo, AadharImage, Email, Religion, Diet, MaritalStatus;   
 
+    public String getAadharImage() {
+        return AadharImage;
+    }
+
+    public void setAadharImage(String AadharImage) {
+        this.AadharImage = AadharImage;
+    }
+
+    public String getMaritalStatus() {
+        return MaritalStatus;
+    }
+
+    public void setMaritalStatus(String MaritalStatus) {
+        this.MaritalStatus = MaritalStatus;
+    }
+
+        
     public int getHealthID() {
         return HealthID;
     }
@@ -92,13 +109,6 @@ public class Civilian {
         this.Diet = Diet;
     }
 
-    public String getMeritalStatus() {
-        return MeritalStatus;
-    }
-
-    public void setMeritalStatus(String MeritalStatus) {
-        this.MeritalStatus = MeritalStatus;
-    }
-        
+     
         
 }
