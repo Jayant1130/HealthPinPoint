@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/login.css">
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="Header.jsp" %>
 		<div class="main">
 			<div class="login">
 			<div class="lhead">Create to your Health ID</div>
@@ -20,7 +20,7 @@
 			<div class="field">
 			<div class="fieldhead">Aadhar Card Number*</div>
 			<div class="fieldinput">
-				<input placeholder="Aadhar Card Number" minlength="12" type="number"></input></div>
+				<input id="aadhar" placeholder="Aadhar Card Number" minlength="12" type="number"></input></div>
 			</div>
 			<div class="field">
 			<div class="fieldhead">Password*</div>
@@ -32,11 +32,12 @@
 			<div class="fieldinput">
 				<input placeholder="Enter Your Confirm Password" type="Password"></input></div>
 			</div>
-			<div class="button">Next</div>
+			<div class="button" onclick="isAadharExist(aadhar.value)">Next</div>
 			</div>
 			</div>
 		</div>
         <%@include file="footer.jsp" %>	
     </body>
 </html>
+<script src="js/signup.js"></script>
 

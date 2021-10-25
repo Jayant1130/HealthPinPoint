@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/login.css">
     </head>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="Header.jsp" %>
         
 		<div class="main">
                     <a href="civilianSignup.jsp">create civilian healthID</a>

@@ -43,7 +43,8 @@ public class CivilianDAO {
         con=MyConnection.getConnection();
         String sql="select * from civilian where HealthID = ?";
         ps=con.prepareStatement(sql);
-        ps.setInt(1, Integer.parseInt(aadhar));
+        ps.setLong(1, Long.parseLong(aadhar));
+        System.out.println(sql);
         ResultSet rs = ps.executeQuery();
         if(rs.next())
         {
