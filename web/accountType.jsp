@@ -6,10 +6,11 @@
 		<link rel="stylesheet" href="css/header.css">
 		<link rel="stylesheet" href="css/footer.css">
 		
+                <link rel="stylesheet" href="css/loader.css">
 		<link rel="stylesheet" href="css/Home.css">
 		<link rel="stylesheet" href="css/login.css">
     </head>
-    <body>
+    <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
         
 		<div class="main">
@@ -23,3 +24,4 @@
 	<%@include file="footer.jsp" %>	
     </body>
 </html>
+<script src="js/index.js"></script>

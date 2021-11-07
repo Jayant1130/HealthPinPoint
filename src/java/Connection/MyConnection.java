@@ -24,7 +24,7 @@ public class MyConnection {
     {
         try {
            con=DriverManager.getConnection("jdbc:mysql://uhjngpybqckknztx:0E8zscqJ9YJezbRe5ELm@baiqzipfb1xqinsda2d5-mysql.services.clever-cloud.com:3306/baiqzipfb1xqinsda2d5", "uhjngpybqckknztx", "0E8zscqJ9YJezbRe5ELm");
-            System.out.println("Connection done....");
+//            System.out.println("Connection done....");
           } 
         catch (SQLException e) 
         {

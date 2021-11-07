@@ -25,6 +25,8 @@
     display: flex;
     justify-content: center;
     padding: 10px;
+    width: 100px;
 }
 
 body {background: linear-gradient(67deg, #79e3f3bd, #ffffffe0);}
+img {width: 100%;}

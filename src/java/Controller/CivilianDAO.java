@@ -15,13 +15,13 @@ public class CivilianDAO {
         con=MyConnection.getConnection();
         String sql="INSERT INTO civilian VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?);";
         ps=con.prepareStatement(sql);
-        ps.setInt(1, Integer.parseInt(c.getHealthID()));
-        ps.setInt(2, c.getDistrictID());
+        ps.setLong(1, Long.parseLong(c.getHealthID()));
+        ps.setInt(2, c.getCityID());
         ps.setString(3, c.getName());
-        ps.setString(4, c.getMobileNo());
+        ps.setLong(4, Long.parseLong(c.getMobileNo()));
         ps.setString(5, c.getAddress());
         ps.setString(6, c.getDOB());
-        ps.setInt(7, Integer.parseInt(c.getEmergencyNo()));
+        ps.setLong(7, Long.parseLong(c.getEmergencyNo()));
         ps.setString(8, c.getPhoto());
         ps.setString(9, c.getAadharImage());
         ps.setString(10, c.getEmail());

@@ -1,8 +1,9 @@
 package Model;
 
 public class Civilian {
-        private int  DistrictID;
-        private String HealthID, Name, MobileNo, Address, DOB, EmergencyNo, Photo, AadharImage, Email, Religion, Diet, MaritalStatus;   
+        private int  CityID;
+        private String HealthID, Name, MobileNo, Address, DOB, EmergencyNo, Photo, AadharImage, 
+                Email, Religion, Diet, MaritalStatus;   
 
     public String getAadharImage() {
         return AadharImage;
@@ -28,16 +29,14 @@ public class Civilian {
         this.HealthID = HealthID;
     }
 
-        
- 
-
-    public int getDistrictID() {
-        return DistrictID;
+    public int getCityID() {
+        return CityID;
     }
 
-    public void setDistrictID(int DistrictID) {
-        this.DistrictID = DistrictID;
+    public void setCityID(int CityID) {
+        this.CityID = CityID;
     }
+
 
     public String getName() {
         return Name;

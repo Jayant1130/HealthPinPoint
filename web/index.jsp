@@ -7,9 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/header.css">
 		<link rel="stylesheet" href="css/footer.css">
+                <link rel="stylesheet" href="css/loader.css">
 		<link rel="stylesheet" href="css/Home.css">
     </head>
-    <body>
+    <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
         
 		<div class="main">
@@ -142,3 +143,4 @@
 		</div>
     </body>
 </html>
+<script src="js/index.js"></script>
