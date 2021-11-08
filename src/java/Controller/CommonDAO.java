@@ -2,6 +2,7 @@ package Controller;
 
 import Connection.MyConnection;
 import Model.City;
+import Model.Login;
 import Model.State;
 import java.io.IOException;
 import java.sql.Connection;
@@ -54,5 +55,43 @@ public class CommonDAO {
         }
         con.close();
         return mylist;
+    }
+    public int AddLoginID(Login l) throws SQLException, IOException{
+        Connection con=null;
+        PreparedStatement ps=null;
+        con=MyConnection.getConnection();
+        String sql="INSERT INTO login VALUES (? , ?);";
+        ps=con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(l.getUserID()));
+        ps.setString(2, l.getPassword());
+        int n = ps.executeUpdate();
+        con.close();
+        if(n > 0){
+            return n;
+        }else{
+            return 0;
+        }
+    }
+    public boolean isCorrectLogin(String UserID, String Password) throws SQLException {
+        Connection con = null;
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql;
+        sql = "select * from login where UserID = ? AND Password = ?";
+        ps = con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(UserID));
+        ps.setString(2, Password);
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            con.close();
+            return true;
+        } else {
+            con.close();
+            return false;
+        }
+    }
+    public static void main(String[] args) throws SQLException {
+        System.out.println(new CommonDAO().isCorrectLogin("1223", "jau"));
     }
 }

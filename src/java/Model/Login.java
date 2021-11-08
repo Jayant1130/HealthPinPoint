@@ -1,14 +1,13 @@
 package Model;
 
 public class Login {
-    private int UserID;
-    private String Password;
+    private String UserID, Password;
 
-    public int getUserID() {
+    public String getUserID() {
         return UserID;
     }
 
-    public void setUserID(int UserID) {
+    public void setUserID(String UserID) {
         this.UserID = UserID;
     }
 

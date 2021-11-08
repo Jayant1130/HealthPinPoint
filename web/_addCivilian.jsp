@@ -1,3 +1,5 @@
+<%@page import="Model.Login"%>
+<%@page import="Controller.CommonDAO"%>
 <%@page import="Controller.CivilianDAO"%>
 <%@page import="Model.Civilian"%>
 <%
@@ -16,8 +18,12 @@
     c.setReligion(request.getParameter("Religion"));
     c.setDiet(request.getParameter("Diet"));
     CivilianDAO cid = new CivilianDAO();
-    if(cid.CivilianGenerateID(c)>0){
-        out.print("<script>alert('User Added');<script>");
+    CommonDAO cd = new CommonDAO();
+    Login l = new Login();
+    l.setUserID(request.getParameter("aadhar"));
+    l.setPassword(request.getParameter("password"));
+    if(cid.CivilianGenerateID(c)>0 && cd.AddLoginID(l)> 0){
+        out.print("<script>alert('User Added');</script>");
         RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  
         rd.include(request, response);
     }

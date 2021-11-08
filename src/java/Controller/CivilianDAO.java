@@ -2,6 +2,7 @@ package Controller;
 
 import Connection.MyConnection;
 import Model.Civilian;
+import Model.Login;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -52,6 +53,24 @@ public class CivilianDAO {
         }
         else
         {
+            return false;
+        }
+    }
+    public boolean isCivilianID(String UserID) throws SQLException {
+        Connection con = null;
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql;
+        sql = "select * from civilian where HealthID = ?";
+        ps = con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(UserID));
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            con.close();
+            return true;
+        } else {
+            con.close();
             return false;
         }
     }
