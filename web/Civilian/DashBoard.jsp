@@ -13,19 +13,10 @@
     </head>
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
-        <a href="LoginType.jsp"></a>
-
+       
         <div class="main">
             <div class="DashBoard">
-                <div class="options">
-                    <div class="option"><span>@</span>Profile</div>
-                  
-                    <div class="option"><span>@</span>Health Issue</div>
-                    <div class="option"><span>@</span>Family Members</div>
-                    <div class="option"><span>@</span>Current Health Issue</div>
-                    
-                    
-                </div>
+                <%@include file="DashBoard_Options.jsp" %>
                 <div class="DashBoardScreen">
                     <div class="HiCard">
                         <div class="HeadDiv">head</div>
@@ -64,7 +55,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
         <%@include file="footer.jsp" %>	

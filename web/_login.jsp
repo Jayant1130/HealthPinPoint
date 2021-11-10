@@ -8,6 +8,7 @@
     CivilianDAO cid = new CivilianDAO();
     if(cd.isCorrectLogin(UserID, Password)){
         String url = "./LoginType.jsp?";
+        session.setAttribute("UserID", UserID);
         if(cid.isCivilianID(UserID)){
             url = url+"Civilian=1";
         }

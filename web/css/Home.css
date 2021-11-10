@@ -38,8 +38,11 @@ input[readonly] {
     padding: 8px;
     font-size: 20px;
     font-family: system-ui;
+    margin: 0 10px;
     font-weight: bolder;
+    cursor: pointer;
     color: white;
+    background-color: white;
 }
 .feature {
     display: flex;

@@ -12,10 +12,8 @@
     </head>
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
-        
 		<div class="main">
 			<div class="headline">
-			
 			<div class="headline-right">
 				<img style="width: 100%;" src="img/headlineimage.png"/>
 			</div>

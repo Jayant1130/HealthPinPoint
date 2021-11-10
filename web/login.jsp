@@ -27,7 +27,8 @@
 			<div class="fieldinput"><input placeholder="HealthID" type="text" name="UserID"></input></div></div>
 			<div class="field">
 			<div class="fieldhead">Password<span style="color:red;">*</span></div>
-			<div class="fieldinput"><input placeholder="Password" type="password" name="Password"></input></div></div>
+			<div class="fieldinput"><input placeholder="Password" type="password" name="Password"></input></div>
+                        </div>
 			<div class="field">
 			<div class="fieldhead">Confirm Password<span style="color:red;">*</span></div>
 			<div class="fieldinput"><input placeholder="Confirm Password" type="password"></input></div></div>

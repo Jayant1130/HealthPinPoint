@@ -1,0 +1,70 @@
+.DashBoardScreen_FamilyMember {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 50vh;
+    width: 100%;
+    /* background: white; */
+}
+
+.FCard {
+    padding: 4px;
+    min-width: 280px;
+    /* width: auto; */
+    background-color: #fdfdfde6;
+    margin: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+    box-shadow: 1px 1px 4px #0000008f;
+    border-radius: 10px;
+}
+
+.FCardHead {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 10px 0;
+    color: orange;
+    font-size: larger;
+    font-family: system-ui;
+    font-weight: 900;
+    border-bottom: 1px solid #ffa500cf;
+}
+
+.FCardInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.FCardPhoto {
+    width: 34%;
+    background-color: #f4f9f7;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FCardPhoto img {
+    width: 88%;
+    height: 88%;
+}
+
+.FCardInfom .Detail {
+    min-width: 75%;
+}
+.button-header {
+    padding: 10px 0;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}

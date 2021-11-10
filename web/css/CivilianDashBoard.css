@@ -4,6 +4,7 @@
     justify-content: center;
     width: 100%;
     align-items: center;
+    background-color: #0a0a0a05;
 }
 
 .options {
@@ -12,6 +13,7 @@
     justify-content: space-evenly;
     width: 100%;
     padding: 10px 0px;
+    background: white;
 }
 
 .option {
@@ -20,13 +22,17 @@
     width: 25%;
     justify-content: center;
     align-items: center;
-    background-color: #5100ff6b;
-    border: 1px solid;
+    background: linear-gradient(67deg, #006a79bd, #91e0ec);
+    border: 1px solid white;
     line-height: 40px;
     padding: 9px;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    text-shadow: 0px 0px 10px white;
 }
 
-.DashBoardScreen {
+.DashBoardScreen_HealthIssue {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -40,10 +46,11 @@
     flex-direction: row;
     width: 90%;
     border-radius: 10px;
-    box-shadow: 1px 2px 9px black;
-    border: 2px solid;
-    background-color: #00ff1a;
+    box-shadow: 1px 2px 9px #a5b9af;
+    border: 2px solid #a1efc3;
+    background-color: #dbeddc;
     padding: 9px;
+    margin: 10px;
     flex-wrap: wrap;
 }
 
@@ -54,11 +61,14 @@
     padding-bottom: 5px;
     margin-bottom: 5px;
     border-bottom: 1px solid white;
+    font-weight: 700;
+    font-family: -webkit-pictograph;
 }
 
 .Detail {
-    width: 300px;
+    min-width: 300px;
     display: flex;
+    width: auto;
     flex-direction: row;
     padding: 10px 0px;
 }
@@ -66,7 +76,7 @@
 .Property {
     padding: 0px 10px;
     font-weight: 800;
-    color: red;
+    color: #097629;
 }
 
 .Value {
@@ -77,6 +87,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin: 10px;
     justify-content: center;
     align-items: center;
     background-color: green;
@@ -105,5 +116,48 @@
     background-color: antiquewhite;
 }
 .TCard .Detail {
-    width: 226px;
+    min-width: 226px;
+    width: auto;
+}
+
+.option.active {
+    background: linear-gradient(359deg, #006a7900, #0099d1ab);
+    font-weight: bold;
+    color: #2d14c1;
+}
+
+.modelscreen {position: fixed;left: 0;top: 0;background: #ffffffb8;width: 100%;height: -webkit-fill-available;display: flex;justify-content: center;align-items: center;}
+
+.model {
+    background: white;
+    box-shadow: 1px 1px 10px #00000063;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 280px;
+    width: 50%;
+}
+
+.modelHeader {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    border-bottom: 2px solid orange;
+    padding: 14px;
+    font-weight: 800;
+    color: orange;
+}
+
+.modelContent {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    /* overflow-y: scroll; */
+}
+
+.modelFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 10px;
+    border-top:  2px solid orange;
 }
