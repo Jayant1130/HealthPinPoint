@@ -5,7 +5,12 @@ var loader = 1;
 function setLoader(f){
     loader = f;
 }
-
+function close_model(modelid){
+    document.getElementById(modelid).style.display = "none";
+}
+function open_model(modelid){
+    document.getElementById(modelid).style.display = "flex";
+}
 function Loader(){
     var lo = document.getElementById("loader")
     if(loader == 0){

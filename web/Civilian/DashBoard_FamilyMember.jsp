@@ -18,44 +18,52 @@
     </head>
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
-       
+
         <div class="main">
             <div class="DashBoard">
                 <%@include file="DashBoard_Options.jsp" %>
                 <div class="button-header">
-                    <div class="button">+ Add Family Member</div>
-                    <div class="modelscreen" id="AddFamilyModel">
+                    <div class="button" onclick="open_model('AddFamilyModel')">+ Add Family Member</div>
+                    <div class="modelscreen" style="display:none;" id="AddFamilyModel" >
                         <div class="model">
-                            <div class="modelHeader">Add Your Family Member</div>
-                            <div class="modelContent">
-                                <div class="field">
-			<div class="fieldhead">Relative's Aadhar Card Number <span style="color:red;">*</span></div>
-			<div class="fieldinput"><input placeholder="Relative's Aadhar Card Number" type="text" name="aadhar"></input></div>
-                        </div>
-                                <div class="field">
-			<div class="fieldhead">OTP <span style="color:red;">*</span></div>
-			<div class="fieldinput"><input placeholder="One time Password" type="text" name="OTP"></input></div>
-                        </div>
-                            </div>
-                            <div class="modelFooter">
-                                <div class="button" id="AddFamilyModelNext" style="border-radius: 10px;display: none;">Validate</div>
-                                <div class="button" id="AddFamilyModelAdd"  style="border-radius: 10px"> Add</div>
-                                <div class="button" id="AddFamilyModelAdd"  style="border-radius: 10px"> Close</div>
-                            </div>
+                            <form action="_AddEntreaty.jsp" method="post">
+                                <div class="modelHeader">Entreaty Your Family Member</div>
+                                <div class="modelContent">
+                                    <div class="field">
+                                        <div class="fieldhead">Relative's Aadhar Card Number <span style="color:red;">*</span></div>
+                                        <div class="fieldinput"><input placeholder="Relative's Aadhar Card Number" type="text" name="aadhar"></input></div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="fieldhead">Relationship<span style="color:red;">*</span></div>
+                                        <div class="fieldinput"><input placeholder="Relationship" type="text" name="Relationship"></input></div>
+                                    </div>
+                                </div>
+                                <div class="modelFooter">
+                                    <button type="submit" class="button" id="AddFamilyModelAdd"  style="border-radius: 10px;">Entreaty</button>
+                                    <div class="button" id="AddFamilyModelAdd"  style="border-radius: 10px" onclick="close_model('AddFamilyModel')">Close</div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div>
-                
-                <div class="DashBoardScreen_FamilyMember">
-                    
-                    <%
-                    CivilianDAO cd = new CivilianDAO(); 
-                    String HealthID = (String) session.getAttribute("UserID");
-                   
-                    List<FamilyMember> familymembers = cd.getFamilyMembersByHealthID(HealthID);
-                    for(FamilyMember fm : familymembers){
-                        Civilian c = cd.getCivilianByID(HealthID);
+                    <div class="button" onclick="getRequestModel();open_model('EntreatyScreen');"> -> Family Entreaty </div>
+                    <div class="modelscreen" style="display:none;" id="EntreatyScreen">
                         
+                    </div>
+                </div>
+
+                <div class="DashBoardScreen_FamilyMember">
+
+                    <%
+                                    CivilianDAO cd = new CivilianDAO();
+                                    String HealthID = (String) session.getAttribute("UserID");
+                        List<FamilyMember> familymembers = cd.getFamilyMembersByHealthIDandStatus(HealthID, 1);
+                        if (familymembers.size() == 0) {
+                    %>
+                    No Family Member Added Now, Click on "Add Family Member" button for add you family member in your health.                        
+                    <%
+                        }
+                        for (FamilyMember fm : familymembers) {
+                            Civilian c = cd.getCivilianByID(fm.getRelativeHealthID());
                     %>
                     <div class="FCard">
                         <div class="FCardHead"><%=c.getName()%></div>
@@ -76,13 +84,15 @@
                         </div>
                     </div>
                     <%
-                    }
+                        }
                     %>
                 </div>
-                
+
             </div>
         </div>
         <%@include file="footer.jsp" %>	
     </body>
 </html>
 <script src="../js/index.js"></script>
+<script src="../js/signup.js"></script>
+<script src="../js/CivilianDashBoard.js"></script>

@@ -14,7 +14,12 @@
         <%@include file="Header.jsp" %>
         
 		<div class="main">
-                    <a href="civilianSignup.jsp">create civilian healthID</a>
+                    <a href="civilianSignup.jsp">
+                        <div class="LoginOut">
+                            <div class="HeadingLogo"></div>
+                            <div class="Heading">create civilian healthID</div>
+                            <div class="HeadingDescription">create civilian healthID</div>
+                        </div></a>
 		    <a href="hospitalSignup.jsp">create hospital healthID</a>
                     <a href="doctorSignup.jsp">create doctor healthID</a>
 			

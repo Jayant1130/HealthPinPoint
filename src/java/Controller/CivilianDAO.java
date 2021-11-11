@@ -168,15 +168,16 @@ public class CivilianDAO {
         con.close();
         return u;
     }
-    public List<FamilyMember> getFamilyMembersByHealthID(String HealthID) throws SQLException {
+    public List<FamilyMember> getFamilyMembersByHealthIDandStatus(String HealthID, int Status) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
         PreparedStatement ps = null;
         con = MyConnection.getConnection();
         String sql;
-        sql = "select * from familyMember where healthid = ?";
+        sql = "select * from familyMember where healthid = ? && status = ?";
         ps = con.prepareStatement(sql);
         ps.setLong(1, Long.parseLong(HealthID));
+        ps.setInt(2, Status);
         rs = ps.executeQuery();
         List<FamilyMember> mylist = new ArrayList<FamilyMember>();
         while (rs.next()) {
@@ -190,4 +191,87 @@ public class CivilianDAO {
         con.close();
         return mylist;
     }
+    public List<FamilyMember> getRFamilyMembersByHealthIDandStatus(String HealthID, int Status) throws SQLException {
+        Connection con = null;
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql;
+        sql = "select * from familyMember where relativeHealthID = ? && status = ?";
+        ps = con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(HealthID));
+        ps.setInt(2, Status);
+        rs = ps.executeQuery();
+        List<FamilyMember> mylist = new ArrayList<FamilyMember>();
+        while (rs.next()) {
+            FamilyMember u = new FamilyMember();
+            u.setHealthID(rs.getString("HealthID"));
+            u.setRelationship(rs.getString("Relationship"));
+            u.setRelativeHealthID(rs.getString("RelativeHealthID"));
+            mylist.add(u);
+            u = null;
+        }
+        con.close();
+        return mylist;
+    }
+    
+    public int isFamilyEntreatyExist(FamilyMember f) throws SQLException {
+        Connection con = null;
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql;
+        sql = "select * from familyMember where HealthID = ? && RelativeHealthID = ?";
+        ps = con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(f.getHealthID()));
+        ps.setLong(2, Long.parseLong(f.getRelativeHealthID()));
+        rs = ps.executeQuery();
+        int n = 0;
+        
+        if (rs.next()) {
+            n = rs.getInt("status");
+            con.close();
+            return n;
+        } else {
+            con.close();
+            return -1;
+        }
+    }
+    public int AddFamilyEntreatyID(FamilyMember f) throws SQLException, IOException{
+        Connection con=null;
+        PreparedStatement ps=null;
+        con=MyConnection.getConnection();
+        String sql="INSERT INTO familyMember VALUES (? , ? , ? , ?);";
+        ps=con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(f.getHealthID()));
+        ps.setString(2, f.getRelationship());
+        ps.setLong(3, Long.parseLong(f.getRelativeHealthID()));
+        ps.setInt(4, f.getStatus());
+        int n = ps.executeUpdate();
+        con.close();
+        if(n > 0){
+            return n;
+        }else{
+            return 0;
+        }
+    }
+    
+    public int updateFamilyMemberStatus(FamilyMember f) throws SQLException, IOException{
+        Connection con=null;
+        PreparedStatement ps=null;
+        con=MyConnection.getConnection();
+        String sql="update familyMember set status = ? where HealthID = ? and RelativeHealthID = ? ";
+        ps=con.prepareStatement(sql);
+        ps.setInt(1, f.getStatus());
+        ps.setLong(2, Long.parseLong(f.getHealthID()));
+        ps.setLong(3, Long.parseLong(f.getRelativeHealthID()));
+        int n = ps.executeUpdate();
+        con.close();
+        if(n > 0){
+            return n;
+        }else{
+            return 0;
+        }
+    }
+    
 }

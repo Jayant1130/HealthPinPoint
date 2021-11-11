@@ -13,47 +13,80 @@
     </head>
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
-       
+
         <div class="main">
             <div class="DashBoard">
                 <%@include file="DashBoard_Options.jsp" %>
-                <div class="DashBoardScreen">
-                    <div class="HiCard">
-                        <div class="HeadDiv">head</div>
-                        <div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div><div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div><div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div><div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div>
-                        <div class="TreatmentButton">Show Treatments</div>
-                        <div class="Treatments">
-                            <div class="TCard">
-                            <div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div><div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div><div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div><div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div><div class="Detail">
-                            <div class="Property">h</div>
-                            <div class="Value">h</diV>                               
-                        </div> </div>                            
+                <div class="profile">
+                    <div class="button-header">
+                        <div class="button" onclick="getRequestModel();open_model('EntreatyScreen');"> -> Family Entreaty </div>
+                        <div class="button" onclick="open_model('EntreatyScreen');"> Update </div>
+                        <div class="modelscreen" style="display:none;" id="EntreatyScreen">
+
                         </div>
                     </div>
+                    <div class="profileinfo">
+                        <div class="photo">
+                            <img src=""/>
+                        </div>
+                        <div class="profiledetail">
+                            <div class="Detail">
+                                <div class="Property">Time Stamp : </div>
+                                <div class="Value">Value</diV>                               
+                            </div>
+                            <div class="Detail">
+                                <div class="Property">Time Stamp : </div>
+                                <div class="Value">Value</diV>                               
+                            </div>
+                            <div class="Detail">
+                                <div class="Property">Time Stamp : </div>
+                                <div class="Value">Value</diV>                               
+                            </div>
+                            <div class="Detail">
+                                <div class="Property">Time Stamp : </div>
+                                <div class="Value">Value</diV>                               
+                            </div>
+                            <div class="Detail">
+                                <div class="Property">Time Stamp : </div>
+                                <div class="Value">Value</diV>                               
+                            </div>
+                            <div class="Detail">
+                                <div class="Property">Time Stamp : </div>
+                                <div class="Value">Value</diV>                               
+                            </div>
+                            <div class="Detail">
+                                <div class="Property">Time Stamp : </div>
+                                <div class="Value">Value</diV>                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profilestatic">
+                        <div class="staticwindow">
+                            <div class="staticwindowheader">Header Static</div>
+                            <div class="staticwindowinfo">25<div class="staticpercent">%</div></div>
+                        </div>
+                        <div class="staticwindow">
+                            <div class="staticwindowheader">Header Static</div>
+                            <div class="staticwindowinfo">25<div class="staticpercent">%</div></div>
+                        </div>
+                        <div class="staticwindow">
+                            <div class="staticwindowheader">Header Static</div>
+                            <div class="staticwindowinfo">25<div class="staticpercent">%</div></div>
+                        </div>
+                        <div class="staticwindow">
+                            <div class="staticwindowheader">Header Static</div>
+                            <div class="staticwindowinfo">25<div class="staticpercent">%</div></div>
+                        </div>
+                        <div class="staticwindow">
+                            <div class="staticwindowheader">Header Static</div>
+                            <div class="staticwindowinfo">25<div class="staticpercent">%</div></div>
+                        </div>
+                        <div class="staticwindow">
+                            <div class="staticwindowheader">Header Static</div>
+                            <div class="staticwindowinfo">25<div class="staticpercent">%</div></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -61,3 +94,5 @@
     </body>
 </html>
 <script src="../js/index.js"></script>
+<script src="../js/signup.js"></script>
+<script src="../js/CivilianDashBoard.js"></script>

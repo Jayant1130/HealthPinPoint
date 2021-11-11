@@ -161,3 +161,84 @@
     padding: 10px;
     border-top:  2px solid orange;
 }
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.button-header {
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+
+.profileinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    background: white;
+    margin: 10px;
+    border-radius: 18px;
+}
+
+.photo {
+    width: 25%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.profiledetail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 75%;
+    padding: 10px;
+}
+
+.profilestatic {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.staticwindow {
+    padding: 23px;
+    margin: 28px;
+    display: flex;
+    flex-direction: column;
+    background: orange;
+    justify-content: center;
+    align-items: center;
+}
+
+.staticwindowheader {
+    font-size: x-large;
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
+.staticwindowinfo {
+    display: flex;
+    font-size: 54px;
+    justify-content: center;
+    background: white;
+    padding: 10px;
+    color: red;
+    border-radius: 59px;
+    width: fit-content;
+}
+
+.staticpercent {
+    font-size: 19px;
+    position: absolute;
+    margin: 48px -59px 0 0;
+    background: red;
+    padding: 5px;
+    color: white;
+    border-radius: 43px;
+}

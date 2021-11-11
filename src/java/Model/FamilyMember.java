@@ -2,6 +2,17 @@ package Model;
 
 public class FamilyMember {
     String HealthID, Relationship, RelativeHealthID;
+    int Status;
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
+    }
+    
+    
 
     public String getHealthID() {
         return HealthID;
