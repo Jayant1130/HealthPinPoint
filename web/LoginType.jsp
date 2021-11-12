@@ -21,8 +21,9 @@
             }
             if(request.getParameter("CivilianDoctor") != null){
             %>
-            <a href="Civilian/Home.jsp">Login As Civilian </a>
-            <a href="Doctor/Home.jsp">Login As Doctor</a>
+         
+            <a href="Civilian/DashBoard.jsp">Login As Civilian </a>
+            <a href="Doctor/DashBoard.jsp">Login As Doctor</a>
             <%
             }
             %>

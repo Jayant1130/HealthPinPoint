@@ -17,12 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CivilianDAO {
-    public int CivilianGenerateID(Civilian c) throws SQLException, IOException{
-        Connection con=null;
-        PreparedStatement ps=null;
-        con=MyConnection.getConnection();
-        String sql="INSERT INTO civilian VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?);";
-        ps=con.prepareStatement(sql);
+
+    public int CivilianGenerateID(Civilian c) throws SQLException, IOException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql = "INSERT INTO civilian VALUES (? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?);";
+        ps = con.prepareStatement(sql);
         ps.setLong(1, Long.parseLong(c.getHealthID()));
         ps.setInt(2, c.getCityID());
         ps.setString(3, c.getName());
@@ -38,30 +39,28 @@ public class CivilianDAO {
         ps.setString(13, c.getMaritalStatus());
         int n = ps.executeUpdate();
         con.close();
-        if(n > 0){
+        if (n > 0) {
             return n;
-        }else{
+        } else {
             return 0;
         }
     }
-    public boolean isAadharExist(String aadhar) throws SQLException, IOException
-    {
-        Connection con=null;
-        PreparedStatement ps=null;
-        con=MyConnection.getConnection();
-        String sql="select * from civilian where HealthID = ?";
-        ps=con.prepareStatement(sql);
+
+    public boolean isAadharExist(String aadhar) throws SQLException, IOException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql = "select * from civilian where HealthID = ?";
+        ps = con.prepareStatement(sql);
         ps.setLong(1, Long.parseLong(aadhar));
         ResultSet rs = ps.executeQuery();
-        if(rs.next())
-        {
+        if (rs.next()) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
+
     public boolean isCivilianID(String UserID) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
@@ -80,7 +79,7 @@ public class CivilianDAO {
             return false;
         }
     }
-    
+
     public List<HealthIssue> getHealthIssuesByHealthID(String HealthID) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
@@ -108,7 +107,7 @@ public class CivilianDAO {
         con.close();
         return mylist;
     }
-    
+
     public List<Treatement> getTreatementsByHealthIsssueID(int HealthIssueID) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
@@ -138,7 +137,7 @@ public class CivilianDAO {
         con.close();
         return mylist;
     }
-    
+
     public Civilian getCivilianByID(String HealthID) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
@@ -149,9 +148,9 @@ public class CivilianDAO {
         ps = con.prepareStatement(sql);
         ps.setLong(1, Long.parseLong(HealthID));
         rs = ps.executeQuery();
-            Civilian u = null;
+        Civilian u = null;
         if (rs.next()) {
-            u =  new Civilian();
+            u = new Civilian();
             u.setHealthID(rs.getString("HealthID"));
             u.setCityID(rs.getInt("CityID"));
             u.setName(rs.getString("Name"));
@@ -164,10 +163,12 @@ public class CivilianDAO {
             u.setEmail(rs.getString("Email"));
             u.setReligion(rs.getString("Religion"));
             u.setMaritalStatus(rs.getString("MaritalStatus"));
+            u.setDiet(rs.getString("Diet"));
         }
         con.close();
         return u;
     }
+
     public List<FamilyMember> getFamilyMembersByHealthIDandStatus(String HealthID, int Status) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
@@ -191,6 +192,7 @@ public class CivilianDAO {
         con.close();
         return mylist;
     }
+
     public List<FamilyMember> getRFamilyMembersByHealthIDandStatus(String HealthID, int Status) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
@@ -214,7 +216,7 @@ public class CivilianDAO {
         con.close();
         return mylist;
     }
-    
+
     public int isFamilyEntreatyExist(FamilyMember f) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
@@ -227,7 +229,7 @@ public class CivilianDAO {
         ps.setLong(2, Long.parseLong(f.getRelativeHealthID()));
         rs = ps.executeQuery();
         int n = 0;
-        
+
         if (rs.next()) {
             n = rs.getInt("status");
             con.close();
@@ -237,41 +239,82 @@ public class CivilianDAO {
             return -1;
         }
     }
-    public int AddFamilyEntreatyID(FamilyMember f) throws SQLException, IOException{
-        Connection con=null;
-        PreparedStatement ps=null;
-        con=MyConnection.getConnection();
-        String sql="INSERT INTO familyMember VALUES (? , ? , ? , ?);";
-        ps=con.prepareStatement(sql);
+
+    public int AddFamilyEntreatyID(FamilyMember f) throws SQLException, IOException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql = "INSERT INTO familyMember VALUES (? , ? , ? , ?);";
+        ps = con.prepareStatement(sql);
         ps.setLong(1, Long.parseLong(f.getHealthID()));
         ps.setString(2, f.getRelationship());
         ps.setLong(3, Long.parseLong(f.getRelativeHealthID()));
         ps.setInt(4, f.getStatus());
         int n = ps.executeUpdate();
         con.close();
-        if(n > 0){
+        if (n > 0) {
             return n;
-        }else{
+        } else {
             return 0;
         }
     }
-    
-    public int updateFamilyMemberStatus(FamilyMember f) throws SQLException, IOException{
-        Connection con=null;
-        PreparedStatement ps=null;
-        con=MyConnection.getConnection();
-        String sql="update familyMember set status = ? where HealthID = ? and RelativeHealthID = ? ";
-        ps=con.prepareStatement(sql);
+
+    public int updateFamilyMemberStatus(FamilyMember f) throws SQLException, IOException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql = "update familyMember set status = ? where HealthID = ? and RelativeHealthID = ? ";
+        ps = con.prepareStatement(sql);
         ps.setInt(1, f.getStatus());
         ps.setLong(2, Long.parseLong(f.getHealthID()));
         ps.setLong(3, Long.parseLong(f.getRelativeHealthID()));
         int n = ps.executeUpdate();
         con.close();
-        if(n > 0){
+        if (n > 0) {
             return n;
-        }else{
+        } else {
             return 0;
         }
     }
-    
+
+    public int getNextHealthIssueID() throws SQLException {
+        String sql;
+        int n = 120001;
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        sql = "Select max(HealthIssueID) from HealthIssue";
+        ps = con.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            if (rs.getInt("max(HealthIssueID)") != 0) {
+                n = rs.getInt("max(HealthIssueID)") + 1;
+            }
+        }
+        con.close();
+        return n;
+    }
+
+    public int AddHealthIssue(HealthIssue f) throws SQLException, IOException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql = "INSERT INTO healthIssue VALUES (now(),?,?,?,?,?,?,?,?)";
+        ps = con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(f.getHealthID()));
+        ps.setInt(2, new CivilianDAO().getNextHealthIssueID());
+        ps.setString(3, f.getComplaint());
+        ps.setString(4, f.getDuration());
+        ps.setString(5, f.getDiseases());
+        ps.setString(6, f.getOriginOfCause());
+        ps.setString(7, f.getTroubleTable());
+        ps.setInt(8, f.getMajor());
+        int n = ps.executeUpdate();
+        con.close();
+        if (n > 0) {
+            return n;
+        } else {
+            return 0;
+        }
+    }
 }

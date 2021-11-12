@@ -2,7 +2,16 @@ package Model;
 
 public class HealthIssue {
     String DateTime, HealthID, Complaint, Duration, Diseases, OriginOfCause, TroubleTable;
-    int HealthIssueID;
+    int HealthIssueID, Major;
+
+    public int getMajor() {
+        return Major;
+    }
+
+    public void setMajor(int Major) {
+        this.Major = Major;
+    }
+    
 
     public String getDateTime() {
         return DateTime;

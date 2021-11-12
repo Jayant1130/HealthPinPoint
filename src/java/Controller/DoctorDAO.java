@@ -11,6 +11,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoctorDAO {
+       public boolean isDoctorID(String UserID) throws SQLException {
+           Connection con = null;
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql;
+        sql = "select * from doctor where HealthID = ?";
+        ps = con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(UserID));
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            con.close();
+            return true;
+        } else {
+            con.close();
+            return false;
+        }
+    }
     public Doctor getDoctorByID(int DoctorID) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
