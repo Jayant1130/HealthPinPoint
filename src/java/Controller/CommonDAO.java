@@ -91,7 +91,5 @@ public class CommonDAO {
             return false;
         }
     }
-    public static void main(String[] args) throws SQLException {
-        System.out.println(new CommonDAO().isCorrectLogin("1223", "jau"));
-    }
+    
 }

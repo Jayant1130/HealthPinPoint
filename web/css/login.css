@@ -85,3 +85,45 @@
 a {
     text-decoration: none;
 }
+.accountType {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 23px;
+}
+
+.LoginOut {
+    width: 20%;
+    padding: 20px;
+    background: linear-gradient(45deg, #22b3c9, #42c7bf54);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px;
+    cursor: pointer;
+    height: 90%;
+}
+
+.Heading1 {
+    width: 100%;
+    text-align: center;
+    font-size: 49px;
+    padding: 22px 0;
+    color: white;
+    font-family: fantasy;
+    line-height: 56px;
+    text-shadow: 1px 4px 9px rgb(55 230 237);
+}
+
+.HeadingDescription {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-family: monospace;
+    text-shadow: 1px 1px 10px white,1px 1px 10px white,1px 1px 10px white,1px 1px 10px white,1px 1px 10px white,1px 1px 10px white,1px 1px 10px white,1px 1px 10px white,1px 1px 10px white;
+    font-weight: 900;
+    color: rgb(10 117 133);
+}
+
+.LoginOut:hover {
+    background: linear-gradient(
+45deg, #88eefc, #0544478f);
+}

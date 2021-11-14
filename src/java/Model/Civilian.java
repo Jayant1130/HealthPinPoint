@@ -1,18 +1,18 @@
 package Model;
 
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.util.Base64;
+import javax.servlet.http.Part;
+
 public class Civilian {
         private int  CityID;
-        private String HealthID, Name, MobileNo, Address, DOB, EmergencyNo, Photo, AadharImage, 
-                Email, Religion, Diet, MaritalStatus;   
+        private String HealthID, Name, MobileNo, Address, DOB, EmergencyNo,  
+                Email, Religion, Diet, MaritalStatus; 
+        Part Photo, AadharImage;
+    byte[] RPhoto, RAadharImage ;
 
-    public String getAadharImage() {
-        return AadharImage;
-    }
-
-    public void setAadharImage(String AadharImage) {
-        this.AadharImage = AadharImage;
-    }
-
+    
     public String getMaritalStatus() {
         return MaritalStatus;
     }
@@ -78,12 +78,38 @@ public class Civilian {
         this.EmergencyNo = EmergencyNo;
     }
 
-    public String getPhoto() {
+    public Part getPhoto() {
         return Photo;
     }
 
-    public void setPhoto(String Photo) {
+    public void setPhoto(Part Photo) {
         this.Photo = Photo;
+    }
+
+    public String getRPhoto() {
+        String t = Base64.getEncoder().encodeToString(RPhoto);
+        return "data:image/jpg;base64," + t;
+    }
+
+    public void setRPhoto(Blob blob) throws SQLException {
+        this.RPhoto = blob.getBytes(1, (int) blob.length());
+    }
+    
+    public Part getAadharImage() {
+        return AadharImage;
+    }
+
+    public void setAadharImage(Part AadharImage) {
+        this.AadharImage = AadharImage;
+    }
+
+    public String getRAadharImage() {
+        String t = Base64.getEncoder().encodeToString(RAadharImage);
+        return "data:image/jpg;base64," + t;
+    }
+
+    public void setRAadharImage(Blob blob) throws SQLException {
+        this.RAadharImage = blob.getBytes(1, (int) blob.length());
     }
 
     public String getEmail() {

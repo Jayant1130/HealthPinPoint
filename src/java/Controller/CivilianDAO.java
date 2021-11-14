@@ -31,8 +31,8 @@ public class CivilianDAO {
         ps.setString(5, c.getAddress());
         ps.setString(6, c.getDOB());
         ps.setLong(7, Long.parseLong(c.getEmergencyNo()));
-        ps.setString(8, c.getPhoto());
-        ps.setString(9, c.getAadharImage());
+        ps.setBlob(8, c.getPhoto().getInputStream());
+        ps.setBlob(9, c.getAadharImage().getInputStream());
         ps.setString(10, c.getEmail());
         ps.setString(11, c.getReligion());
         ps.setString(12, c.getDiet());
@@ -101,6 +101,7 @@ public class CivilianDAO {
             u.setDiseases(rs.getString("Diseases"));
             u.setOriginOfCause(rs.getString("OriginOfCause"));
             u.setTroubleTable(rs.getString("TroubleTable"));
+            u.setMajor(rs.getInt("Major"));
             mylist.add(u);
             u = null;
         }
@@ -158,8 +159,8 @@ public class CivilianDAO {
             u.setAddress(rs.getString("Address"));
             u.setDOB(rs.getString("DOB"));
             u.setEmergencyNo(rs.getString("EmergencyNo"));
-            u.setPhoto(rs.getString("Photo"));
-            u.setAadharImage(rs.getString("AadharImage"));
+            u.setRPhoto(rs.getBlob("Photo"));
+            u.setRAadharImage(rs.getBlob("AadharImage"));
             u.setEmail(rs.getString("Email"));
             u.setReligion(rs.getString("Religion"));
             u.setMaritalStatus(rs.getString("MaritalStatus"));
@@ -283,7 +284,7 @@ public class CivilianDAO {
         Connection con = null;
         PreparedStatement ps = null;
         con = MyConnection.getConnection();
-        sql = "Select max(HealthIssueID) from HealthIssue";
+        sql = "Select max(HealthIssueID) from healthIssue";
         ps = con.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
@@ -309,6 +310,55 @@ public class CivilianDAO {
         ps.setString(6, f.getOriginOfCause());
         ps.setString(7, f.getTroubleTable());
         ps.setInt(8, f.getMajor());
+        int n = ps.executeUpdate();
+        con.close();
+        if (n > 0) {
+            return n;
+        } else {
+            return 0;
+        }
+    }
+    
+    public HealthIssue getHealthIssuesByID(String HealthIssueID) throws SQLException {
+        Connection con = null;
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql;
+        sql = "select * from healthIssue where HealthIssueID = ? ";
+        ps = con.prepareStatement(sql);
+        ps.setLong(1, Long.parseLong(HealthIssueID));
+        rs = ps.executeQuery();
+            HealthIssue u = null;
+        if (rs.next()) {
+             u = new HealthIssue();
+            u.setDateTime(rs.getString("DateTime"));
+            u.setHealthID(rs.getString("HealthID"));
+            u.setHealthIssueID(rs.getInt("HealthIssueID"));
+            u.setComplaint(rs.getString("Complaint"));
+            u.setDuration(rs.getString("Duration"));
+            u.setDiseases(rs.getString("Diseases"));
+            u.setOriginOfCause(rs.getString("OriginOfCause"));
+            u.setTroubleTable(rs.getString("TroubleTable"));
+            u.setMajor(rs.getInt("Major"));
+        }
+        con.close();
+        return u;
+    }
+    
+    public int updateHealthIssue(HealthIssue h) throws SQLException, IOException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql = "UPDATE healthIssue SET DateTime = now(), Complaint = ?, Duration = ?, Diseases = ? , OriginOfCause = ?, TroubleTable = ?, Major = ? WHERE HealthIssueId = ?";
+        ps = con.prepareStatement(sql);
+        ps.setString(1, h.getComplaint());
+        ps.setString(2, h.getDuration());
+        ps.setString(3, h.getDiseases());
+        ps.setString(4, h.getOriginOfCause());
+        ps.setString(5, h.getOriginOfCause());
+        ps.setInt(6, h.getMajor());
+        ps.setInt(7, h.getHealthIssueID());
         int n = ps.executeUpdate();
         con.close();
         if (n > 0) {

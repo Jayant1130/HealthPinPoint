@@ -13,11 +13,13 @@
         String url = "./LoginType.jsp?";
         session.setAttribute("UserID", UserID);
         if(cid.isCivilianID(UserID) && !dd.isDoctorID(UserID)){
+        session.setAttribute("AccountType", "Civilian");
             url = url+"Civilian=1";
         }
 
         if(dd.isDoctorID(UserID))
         {
+        session.setAttribute("AccountType", "Civilian | Doctor");
        url = url+"CivilianDoctor=1";
         }
         

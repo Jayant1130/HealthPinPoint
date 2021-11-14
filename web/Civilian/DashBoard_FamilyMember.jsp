@@ -69,7 +69,7 @@
                         <div class="FCardHead"><%=c.getName()%></div>
                         <div class="FCardInfo">
                             <div class="FCardPhoto">
-                                <img src="<%=c.getPhoto()%>">
+                                <img src="<%=c.getRPhoto()%>">
                             </div>
                             <div class="FCardInfom">
                                 <div class="Detail">

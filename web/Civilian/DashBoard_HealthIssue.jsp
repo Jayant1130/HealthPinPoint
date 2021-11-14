@@ -30,6 +30,9 @@
                 <%@include file="DashBoard_Options.jsp" %>
                 <div class="DashBoardScreen_HealthIssue">
                     <%
+                        if(healthIssues.size()==0){
+            out.print("No HealthIsse");
+        }
                     for(HealthIssue hi : healthIssues){
                         
                     %>

@@ -1,3 +1,5 @@
+<%@page import="Controller.DoctorDAO"%>
+<%@page import="Model.Doctor"%>
 <html>
     <head>
         <title>Health PinPoint</title>
@@ -12,21 +14,42 @@
     </head>
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
-        <a href="LoginType.jsp"></a>
-
         <div class="main">
+                                <div class="accountType">
             <%
             if(request.getParameter("Civilian") != null){
                 response.sendRedirect("Civilian/DashBoard.jsp");
             }
             if(request.getParameter("CivilianDoctor") != null){
+                
+                if(new DoctorDAO().getDoctorByHealthID(UserID).getActive() == 1){
             %>
-         
-            <a href="Civilian/DashBoard.jsp">Login As Civilian </a>
-            <a href="Doctor/DashBoard.jsp">Login As Doctor</a>
+
+                        <div class="LoginOut" onclick="window.location.href='Doctor/DashBoard.jsp'">
+                            <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>
+                            <div class="Heading1">Login As Doctor</div>
+                            <div class="HeadingDescription">Go as Doctor</div>
+                        </div>
+            <%
+            }else{%>
+                        <div class="LoginOut" >
+                            <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>
+                            <div class="Heading1" style="font-size: 14px;line-height: 22px;">Your Doctor ID is under verification. Please wait for verification process to complete by Government of India.</div>
+                            <div class="HeadingDescription">Go as Doctor</div>
+                        </div>
+
+<%}
+%>
+                        <div class="LoginOut" onclick="window.location.href='Civilian/DashBoard.jsp'">
+                            <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>
+                            <div class="Heading1">Login As Civilian</div>
+                            <div class="HeadingDescription">Go as Civilian</div>
+                        </div>
+            
             <%
             }
             %>
+        </div>
         </div>
         <%@include file="footer.jsp" %>	
     </body>

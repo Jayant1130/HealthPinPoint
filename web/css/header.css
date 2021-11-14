@@ -11,7 +11,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 75%;
+    width: 57%;
     /* background: linear-gradient(340deg, black, transparent); */
     padding: 10px;
 }
@@ -25,8 +25,30 @@
     display: flex;
     justify-content: center;
     padding: 10px;
-    width: 100px;
+    width: 77px;
 }
 
 body {background: linear-gradient(67deg, #79e3f3bd, #ffffffe0);}
 img {width: 100%;}
+
+.toasterdiv {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    z-index: 109;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    padding: 39px 0px;
+    display: none;
+}
+
+.toaster {
+    padding: 10px;
+    background: linear-gradient(45deg, #000000c2, #0000006e);
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    font-family: monospace;
+}

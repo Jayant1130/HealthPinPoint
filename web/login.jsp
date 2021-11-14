@@ -15,7 +15,7 @@
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
 		<div class="main">
-            <form action="_login.jsp" method="post" >
+                    <form action="_login.jsp" method="post" onsubmit="setLoader(1);" >
 			<div class="login">
 			<div class="lhead">Login to your Health ID</div>
 			<div class="lhead1">Accessing your health history esaily</div>
@@ -29,9 +29,6 @@
 			<div class="fieldhead">Password<span style="color:red;">*</span></div>
 			<div class="fieldinput"><input placeholder="Password" type="password" name="Password"></input></div>
                         </div>
-			<div class="field">
-			<div class="fieldhead">Confirm Password<span style="color:red;">*</span></div>
-			<div class="fieldinput"><input placeholder="Confirm Password" type="password"></input></div></div>
                         <input type="submit" class="button" value="Submit">
 			<div class="forget">Forgot your Health ID</div>
 			</div>

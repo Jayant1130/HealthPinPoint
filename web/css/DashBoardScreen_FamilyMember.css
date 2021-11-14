@@ -10,7 +10,7 @@
 
 .FCard {
     padding: 4px;
-    min-width: 280px;
+    min-width: -webkit-fill-available;
     /* width: auto; */
     background-color: #fdfdfde6;
     margin: 10px;
@@ -44,12 +44,14 @@
 
 .FCardPhoto {
     width: 34%;
+    max-width: 186px;
     background-color: #f4f9f7;
     /* padding: 10px; */
     display: flex;
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

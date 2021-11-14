@@ -14,15 +14,23 @@
         <%@include file="Header.jsp" %>
         
 		<div class="main">
-                    <a href="civilianSignup.jsp">
-                        <div class="LoginOut">
-                            <div class="HeadingLogo"></div>
-                            <div class="Heading">create civilian healthID</div>
-                            <div class="HeadingDescription">create civilian healthID</div>
-                        </div></a>
-		    <a href="hospitalSignup.jsp">create hospital healthID</a>
-                    <a href="doctorSignup.jsp">create doctor healthID</a>
-			
+                    <div class="accountType">
+                        <div class="LoginOut" onclick="window.location.href='civilianSignup.jsp'">
+                            <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>
+                            <div class="Heading1">Create Civilian HealthID</div>
+                            <div class="HeadingDescription">for civilian of Indian</div>
+                        </div>
+                        <div class="LoginOut" onclick="window.location.href='hospitalSignup.jsp'">
+                            <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>
+                            <div class="Heading1">Create Hospital ID</div>
+                            <div class="HeadingDescription">for only Hospital</div>
+                        </div>
+                        <div class="LoginOut" onclick="window.location.href='doctorSignup.jsp'">
+                            <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>
+                            <div class="Heading1">Create Doctor ID</div>
+                            <div class="HeadingDescription">for only Doctor's</div>
+                        </div>
+                    </div>
 		
 		
 		</div>

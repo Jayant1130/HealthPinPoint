@@ -18,7 +18,7 @@
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include  file="Header.jsp"%>
         <div class="main">
-            <form action="_addCivilian.jsp" method="post" onsubmit="return CreateId(Name.value, Email.value, Mobile.value, OTP.value )">
+            <form action="_addCivilian.jsp" method="post"  enctype="multipart/form-data" onsubmit="return CreateId(Name.value, Email.value, Mobile.value, OTP.value )">
                 <input type="hidden" name="aadhar" value="<%=request.getParameter("aadhar")%>">
                 <input type="hidden" name="password" value="<%=request.getParameter("password")%>">
                 <div class="login">

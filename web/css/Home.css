@@ -1,4 +1,7 @@
-.headline {
+*{
+    
+ transition: 2s;   
+}.headline {
     background: linear-gradient(67deg, #fafeffbd, #ffffffe0);
     display: flex;
     flex-direction: row;
@@ -109,4 +112,11 @@ input[readonly] {
 .itemdes {
     font-size: 12px;
     font-family: cursive;
+}
+
+.link {
+    background: rgb(8 199 251 / 8%);
+    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
 }
