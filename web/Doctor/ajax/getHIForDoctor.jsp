@@ -21,25 +21,25 @@
 
               <div class="model">
                             <form id="addNewHealthIssue" onsubmit="addNewHealthIssue(document.getElementById('addNewHealthIssue'), '<%=HealthID%>');return false;" method="post">
-                                <div class="modelHeader">Add Treatment</div>
+                                <div class="modelHeader">Add New Health Issue</div>
                                 <div class="modelContent">
                                  <div class="field">
-			<div class="fieldhead">Diagnosis<span style="color:red;">*</span></div>
+			<div class="fieldhead">Complain<span style="color:red;">*</span></div>
 			<div class="fieldinput">
-                            <textarea placeholder="Diagnosis" required name="Diagnosis" ></textarea></div>
+                            <textarea placeholder="Complain" required name="Complain" ></textarea></div>
 			</div>
 			<div class="field">
-			<div class="fieldhead">Medicine Prescribed<span style="color:red;">*</span></div>
+			<div class="fieldhead">Health Issue Duration<span style="color:red;">*</span></div>
 			<div class="fieldinput">
-				<input placeholder="Medicine Prescribed" required name="MedicinePrescribed" type="text"></input></div>
+				<input placeholder="Day" required name="Duration" type="text"></input></div>
 			</div>
 			<div class="field">
-			<div class="fieldhead">Detail<span style="color:red;">*</span></div>
+			<div class="fieldhead">Disease<span style="color:red;">*</span></div>
 			<div class="fieldinput">
-				<input placeholder="Detail" required  name="Detail" type="text"></input></div>
+				<input placeholder="Disease" required  name="Disease" type="text"></input></div>
 			</div>
 			<div class="field">
-			<div class="fieldhead">Advice<span style="color:red;">*</span></div>
+			<div class="fieldhead">Sensation<span style="color:red;">*</span></div>
 			<div class="fieldinput">
 				<input placeholder="Sensation" required  name="Sensation" type="text"></input></div>
 			</div>

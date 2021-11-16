@@ -14,7 +14,7 @@ if(session.getAttribute(key) == null){
     otp  = (String)session.getAttribute(key);
 }
 String q = "<table width = 100% bgcolor= 'white' style='color:blue;'>"
-            + "<tr><td><h2><center> <img width='100px' src='https://drive.google.com/uc?id=1WfsRZGQGcoaXYL0OITEfjXxFAYrQ5s0c'></center> <h2><td><tr>"
+            + "<tr><td><h2><center> <img width='100px' src='https://drive.google.com/uc?id=1rFCfRsOu0_fk1TrMmHMftbTFH0HAFUVN'></center> <h2><td><tr>"
             + "<tr><td><h2><center > Health PinPoint</center> <h2><td><tr>"
             + "<tr><td><center> Welcome </center> <td><tr>"
             + "<tr><td><h4><center>Hey "+Name+",  Your OTP is "+otp+"</center> <h4><td><tr></div>";

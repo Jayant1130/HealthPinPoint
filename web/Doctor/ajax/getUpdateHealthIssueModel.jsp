@@ -2,7 +2,7 @@
 <%@page import="Controller.CivilianDAO"%>
 <%
     CivilianDAO cd = new CivilianDAO();
-    HealthIssue h = cd.getHealthIssuesByID(request.getParameter("HealthIssueID"));
+    HealthIssue h = cd.getHealthIssuesByID(Integer.parseInt(request.getParameter("HealthIssueID")));
     
 %>
 <div class="model">
@@ -41,7 +41,6 @@
                                         if(h.getMajor() == 1){
                                         out.print("checked");
                                         }
-                                        
                                         %> type="checkbox" value="1">Hereditary/ Major Disease<span style="color:red;">(Tick If Disease is Hereditary)</span></input></div>
 			</div>
                                 </div>

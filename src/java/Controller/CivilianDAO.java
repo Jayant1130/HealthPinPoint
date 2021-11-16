@@ -296,7 +296,7 @@ public class CivilianDAO {
         return n;
     }
 
-    public int AddHealthIssue(HealthIssue f) throws SQLException, IOException {
+    public int addHealthIssue(HealthIssue f) throws SQLException, IOException {
         Connection con = null;
         PreparedStatement ps = null;
         con = MyConnection.getConnection();
@@ -319,7 +319,7 @@ public class CivilianDAO {
         }
     }
     
-    public HealthIssue getHealthIssuesByID(String HealthIssueID) throws SQLException {
+    public HealthIssue getHealthIssuesByID(int HealthIssueID) throws SQLException {
         Connection con = null;
         ResultSet rs = null;
         PreparedStatement ps = null;
@@ -327,7 +327,7 @@ public class CivilianDAO {
         String sql;
         sql = "select * from healthIssue where HealthIssueID = ? ";
         ps = con.prepareStatement(sql);
-        ps.setLong(1, Long.parseLong(HealthIssueID));
+        ps.setInt(1, HealthIssueID);
         rs = ps.executeQuery();
             HealthIssue u = null;
         if (rs.next()) {
@@ -359,6 +359,49 @@ public class CivilianDAO {
         ps.setString(5, h.getOriginOfCause());
         ps.setInt(6, h.getMajor());
         ps.setInt(7, h.getHealthIssueID());
+        int n = ps.executeUpdate();
+        con.close();
+        if (n > 0) {
+            return n;
+        } else {
+            return 0;
+        }
+    }
+    
+    public int getNextTreatementID() throws SQLException {
+        String sql;
+        int n = 2000001;
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        sql = "Select max(TreatementID) from treatement";
+        ps = con.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            if (rs.getInt("max(TreatementID)") != 0) {
+                n = rs.getInt("max(TreatementID)") + 1;
+            }
+        }
+        con.close();
+        return n;
+    }
+    
+    public int addTreatement(Treatement t) throws SQLException, IOException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        con = MyConnection.getConnection();
+        String sql = "INSERT INTO treatement VALUES (now(),?,?,?,?,?,?,?,?,?,?);";
+        ps = con.prepareStatement(sql);
+        ps.setInt(1, new CivilianDAO().getNextTreatementID());
+        ps.setInt(2, t.getHealthIssueID());
+        ps.setInt(3, t.getDoctorID());
+        ps.setInt(4, t.getHospitalID());
+        ps.setString(5, t.getDiagnosis());
+        ps.setString(6, t.getMedicinePrescribed());
+        ps.setString(7, t.getDetail());
+        ps.setString(8, t.getAdvice());
+        ps.setString(9, t.getOperation());
+        ps.setString(10, t.getOperationDetail());
         int n = ps.executeUpdate();
         con.close();
         if (n > 0) {

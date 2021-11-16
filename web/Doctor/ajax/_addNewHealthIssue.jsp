@@ -15,7 +15,7 @@
             u.setMajor(Integer.parseInt(request.getParameter("Major")));
             }
             CivilianDAO cd = new CivilianDAO();
-            if(cd.AddHealthIssue(u)>0){
+            if(cd.addHealthIssue(u)>0){
                 out.print("Health Issue Added");
             }else{
                 out.print("Unable to Health Issue");
