@@ -26,9 +26,10 @@
         response.sendRedirect(url);
         
     }else{
-        out.print("<script>alert('Invalid Credential');</script>");
-        RequestDispatcher rd=request.getRequestDispatcher("index.jsp");  
-        rd.include(request, response);
+        out.print("<script>"
+                            + "alert('invalid credentials.');"
+                            + "window.location.href='index.jsp';"
+                            + "</script>");
     }
 
 %>

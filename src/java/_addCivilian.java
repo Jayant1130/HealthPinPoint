@@ -75,9 +75,10 @@ public class _addCivilian extends HttpServlet {
             l.setPassword(request.getParameter("password"));
             if(cid.CivilianGenerateID(c)>0 && cd.AddLoginID(l)> 0){
                 PrintWriter out = response.getWriter();
-                out.print("<script>alert('User Added');</script>");
-                RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
-                rd.include(request, response);
+                out.print("<script>"
+                            + "alert('Your Health Pinpoint is generated.');"
+                            + "window.location.href='index.jsp';"
+                            + "</script>");
             }
         } catch (SQLException ex) {
             Logger.getLogger(_addCivilian.class.getName()).log(Level.SEVERE, null, ex);

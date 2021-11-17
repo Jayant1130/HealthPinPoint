@@ -30,6 +30,13 @@
                             + "alert('invalid Health ID ! Create first Health ID');"
                             + "window.location.href='doctorSignup.jsp';"
                             + "</script>");
+                    
+            }else{
+                if(!cd.isCorrectLogin(aadhar, Password)){
+                    out.print("<script>"
+                            + "alert('invalid credential');"
+                            + "window.location.href='doctorSignup.jsp';"
+                            + "</script>");}
              if (cd.isCorrectLogin(aadhar, Password) && cid.isCivilianID(aadhar)) {
                 if (dd.isDoctorID(aadhar)) {
                     out.print("<script>"
@@ -38,7 +45,6 @@
                             + "</script>");
                 }
              }
-            }else{
             Civilian c = cid.getCivilianByID(aadhar);
             
         %>

@@ -4,6 +4,8 @@
                 !(request.getServletPath().equals("/civilianSignup_aadhar.jsp") ||
                 request.getServletPath().equals("/civilianSignup_detail.jsp") ||
                 request.getServletPath().equals("/doctorSignup.jsp") ||
+                request.getServletPath().equals("/civilianSignup.jsp") ||
+                
                 request.getServletPath().equals("/doctorSignup_detail.jsp") ||
                 request.getServletPath().equals("/accountType.jsp") || 
                 request.getServletPath().equals("/index.jsp") || 
@@ -13,6 +15,8 @@
         if(UserID == null && (request.getServletPath().equals("/civilianSignup_aadhar.jsp") ||
                 request.getServletPath().equals("/civilianSignup_detail.jsp") ||
                 request.getServletPath().equals("/doctorSignup.jsp") ||
+                
+                request.getServletPath().equals("/civilianSignup.jsp") ||
                 request.getServletPath().equals("/doctorSignup_detail.jsp") ||
                 request.getServletPath().equals("/accountType.jsp") || 
                 request.getServletPath().equals("/index.jsp") || 
