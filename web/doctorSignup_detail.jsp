@@ -49,7 +49,7 @@
             
         %>
         <div class="main">
-            <form action="_addDoctor.jsp" method="post"  onsubmit="setLoader(1)" enctype="multipart/form-data" onsubmit="return CreateId(Name.value, Email.value, Mobile.value, OTP.value)">
+            <form action="_addDoctor.jsp" method="post"  onsubmit="setLoader(1);" enctype="multipart/form-data" onsubmit="return CreateId(Name.value, Email.value, Mobile.value, OTP.value)">
                 <input type="hidden" name="aadhar" value="<%=aadhar%>">
                 <input type="hidden" name="password" value="<%=Password%>">
                 <div class="login">
@@ -85,7 +85,7 @@
                         <div class="field">
                             <div class="fieldhead" >Specialized In<span style="color:red;">*</span></div>
                             <div class="fieldinput">
-                                <input placeholder="Enter Specialization" required  type="Address" name="Spe_In"></input></div>
+                                <input placeholder="Enter Specialization" required maxLength="15" type="Address" name="Spe_In"></input></div>
                         </div>
                         <div class="field">
                             <div class="fieldhead" >Clinic Proof<span style="color:red;">*(Only Image Formate)(Max File Size : 500 kb)</span></div>

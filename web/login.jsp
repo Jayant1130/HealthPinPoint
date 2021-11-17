@@ -18,16 +18,16 @@
                     <form action="_login.jsp" method="post" onsubmit="setLoader(1);" >
 			<div class="login">
 			<div class="lhead">Login to your Health ID</div>
-			<div class="lhead1">Accessing your health history esaily</div>
+			<div class="lhead1">Accessing your health history easily</div>
 			<div class="lhead2">Health Id</div>
 			<div class="lhead3">
 			<div class="head4">continue to your account</div>
 			<div class="field">
 			<div class="fieldhead">Health ID/PHR Address<span style="color:red;">*</span></div>
-			<div class="fieldinput"><input placeholder="HealthID" type="text" name="UserID"></input></div></div>
+			<div class="fieldinput"><input placeholder="HealthID" required type="text" name="UserID"></input></div></div>
 			<div class="field">
 			<div class="fieldhead">Password<span style="color:red;">*</span></div>
-			<div class="fieldinput"><input placeholder="Password" type="password" name="Password"></input></div>
+			<div class="fieldinput"><input placeholder="Password" required type="password" name="Password"></input></div>
                         </div>
                         <input type="submit" class="button" value="Submit">
 			<div class="forget">Forgot your Health ID</div>
