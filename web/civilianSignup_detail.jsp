@@ -18,7 +18,7 @@
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include  file="Header.jsp"%>
         <div class="main">
-            <form action="_addCivilian.jsp" method="post"  enctype="multipart/form-data" onsubmit="return CreateId(Name.value, Email.value, Mobile.value, OTP.value )">
+            <form action="_addCivilian.jsp" method="post"  enctype="multipart/form-data" onsubmit="if(Mobile.value.length != 10 || Emergency.value.length != 10){alert('Please enter mobile number in correct formate '); return false;}else return CreateId(Name.value, Email.value, Mobile.value, OTP.value )">
                 <input type="hidden" name="aadhar" value="<%=request.getParameter("aadhar")%>">
                 <input type="hidden" name="password" value="<%=request.getParameter("password")%>">
                 <div class="login">
@@ -32,14 +32,14 @@
                                 <input placeholder="Aadhar Card Number" readonly value="<%=request.getParameter("aadhar")%>" type="number"></input></div>
                         </div>
                         <div class="field">
-                            <div class="fieldhead">Photo<span style="color:red;">*</span></div>
+                            <div class="fieldhead">Photo<span style="color:red;">*(Only Image Formate)(Max File Size : 500 kb)</span></div>
                             <div class="fieldinput">
-                                <input required="" accept="image/*" max-size="500" type="file" name="Photo"></input></div>
+                                <input required="" accept="image/*" max-size="500" onchange="Filevalidation(this, 500)" type="file" name="Photo"></input></div>
                         </div>
                         <div class="field">
                             <div class="fieldhead">Full Name (As per Aadhar)<span style="color:red;">*</span></div>
                             <div class="fieldinput">
-                                <input placeholder="Enter Full Name" required type="text"  name="Name"  id="Name" ></input></div>
+                                <input placeholder="Enter Full Name" maxlength="30" required type="text"  name="Name"  id="Name" ></input></div>
                         </div>
                         <div class="field">
                             <div class="fieldhead">DOB (As per Aadhar)<span style="color:red;"  name="Photo">*</span></div>
@@ -49,12 +49,18 @@
                         <div class="field">
                             <div class="fieldhead">Mobile Number<span style="color:red;">*</span></div>
                             <div class="fieldinput">
-                                <input placeholder="Enter Mobile Number" required  type="Number"  name="Mobile" id="Mobile"></input></div>
+                                <input placeholder="Enter Mobile Number" required  type="Number" 
+                                       onkeyup="if(this.value.length < this.maxLength || this.value.length > this.minLength ){this.value = this.value.slice(0, this.maxLength); alert('Mobile Number should be 10 digit');}"
+                                       maxLength="10" minLength="10"
+                                       name="Mobile" id="Mobile"></input></div>
                         </div>
                         <div class="field">
                             <div class="fieldhead">Emergency Mobile Number<span style="color:red;">*</span></div>
                             <div class="fieldinput">
-                                <input placeholder="Enter Emergency Mobile Number" required  type="Number"  name="Emergency"></input></div>
+                                <input placeholder="Enter Emergency Mobile Number" required  
+                                       onkeyup="if(this.value.length < this.maxLength || this.value.length > this.minLength ){this.value = this.value.slice(0, this.maxLength); alert('Mobile Number should be 10 digit')}"
+                                       maxLength="10" minLength="10"
+                                       type="Number"  name="Emergency" id="Emergency"></input></div>
                         </div>
                         <div class="field">
                             <div class="fieldhead">Email<span style="color:red;">*</span></div>
@@ -105,7 +111,7 @@
                         <div class="field">
                             <div class="fieldhead" >Address<span style="color:red;">*</span></div>
                             <div class="fieldinput">
-                                <input placeholder="Enter Address" required  type="Address"  name="Address"></input></div>
+                                <input placeholder="Enter Address" maxLength="50" required  type="Address"  name="Address"></input></div>
                         </div>
                         <div class="field">
                             <div class="fieldhead">State<span style="color:red;">*</span></div>
@@ -133,15 +139,15 @@
                             </div>
                         </div>
                         <div class="field">
-                            <div class="fieldhead">Aadhar Image<span style="color:red;">*</span></div>
+                            <div class="fieldhead">Aadhar Image<span style="color:red;">*(Only Image Formate)(Max File Size : 500 kb)</span></div>
                             <div class="fieldinput">
-                                <input  type="file" required  accept="image/*" max-size="500" name="AadharImage"></input></div>
+                                <input  type="file" required  accept="image/*"  onchange="Filevalidation(this, 500)" max-size="500" name="AadharImage"></input></div>
                         </div>
                         <input type="submit" class="button"  id ="verifymebutton" value="Verify Me!">
                         <div class="field" id ="otpfield" style="display: none;">
                             <div class="fieldhead">OTP<span style="color:red;">*</span></div>
                             <div class="fieldinput">
-                                <input  type="Password"  name="OTP" onchange="CreateId(Name.value, Email.value, Mobile.value, OTP.value)"  id="OTP"></input></div>
+                                <input  type="Password"  name="OTP" minLength="4" maxlength="4" onchange="CreateId(Name.value, Email.value, Mobile.value, OTP.value)"  id="OTP"></input></div>
                         </div>
                         <input type="submit" class="button" style="display: none;" id ="createidbutton" value="Create My Health PinPoint">
                         </div>

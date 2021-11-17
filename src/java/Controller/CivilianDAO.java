@@ -55,8 +55,10 @@ public class CivilianDAO {
         ps.setLong(1, Long.parseLong(aadhar));
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
+            con.close();
             return true;
         } else {
+            con.close();
             return false;
         }
     }

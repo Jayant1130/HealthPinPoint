@@ -22,7 +22,30 @@ function isAadharExist(aadhar)
    }
 }
 
-
+function isAadharExist1(aadhar) 
+{
+//    alert(Otp)
+    var http = new XMLHttpRequest();
+    http.open("POST",   url+"/ajax/isAadharExist.jsp?", true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var params = "aadhar="+aadhar ;
+    console.log(aadhar);
+    http.send(params);
+    http.onload = function () 
+   {    
+        var r = (http.responseText).toString().trim();
+        console.log(r)
+        if(r.localeCompare("true") == 0)
+        {
+           aadharf = 0;
+           alert("aassd")
+        }else{
+        
+            aadharf = 1;
+           alert("aassd111")
+        }
+   }
+}
 function aadharsubmit(){
     var aadhar =  ""+document.getElementById("aadhar").value;
     var password =  ""+document.getElementById("password").value;
@@ -30,12 +53,11 @@ function aadharsubmit(){
     isAadharExist(aadhar);
     if(password.localeCompare(confirmpassword) == 0 && aadharf == 1){
         return true;
-    }else{
-        if(aadharf == 0){
+    }else if(aadharf == 0){
         alert("Given Aadhar card already exist!!");
-        }else{
+        return false;
+    }else{
         alert("Password and confirm password must be same !!");
-        }
         return false;
     }
 }
@@ -63,7 +85,11 @@ function bhejOTP(Name, Email, Mobile)
            alert("Your one time password send via Email and SMS!!");
            
         }else{
-        
+            
+        document.getElementById("verifymebutton").style.display = "flex";
+        document.getElementById("OTP").required = false;
+        document.getElementById("otpfield").style.display = "none";
+        document.getElementById("createidbutton").style.display = "none";
            alert("Unable to process for one time password!!");
             sendOTP = 0;
         }
