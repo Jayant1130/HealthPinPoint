@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: #f1f1f1;
     max-width: 600px;
 }
 
@@ -41,7 +41,7 @@
     justify-content: center;
     align-items: center;
     width: -webkit-fill-available;
-    border: 1px solid #e5e1e1;
+    border: 1px solid #141878;
 }
 
 .head4 {
@@ -76,7 +76,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: white;
+    background: #f1f1f1;
 }
 .forget {
     padding: 11px 3px;

@@ -62,7 +62,7 @@ public class CommonDAO {
         con=MyConnection.getConnection();
         String sql="INSERT INTO login VALUES (? , ?);";
         ps=con.prepareStatement(sql);
-        ps.setLong(1, Long.parseLong(l.getUserID()));
+        ps.setString(1, l.getUserID());
         ps.setString(2, l.getPassword());
         int n = ps.executeUpdate();
         con.close();
