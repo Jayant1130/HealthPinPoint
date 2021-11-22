@@ -8,6 +8,10 @@
         <servlet-name>_addDoctor</servlet-name>
         <servlet-class>_addDoctor</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>_addHospital</servlet-name>
+        <servlet-class>_addHospital</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>_addCivilian</servlet-name>
         <url-pattern>/_addCivilian.jsp</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>_addDoctor</servlet-name>
         <url-pattern>/_addDoctor.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>_addHospital</servlet-name>
+        <url-pattern>/_addHospital.jsp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

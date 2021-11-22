@@ -4,25 +4,27 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/civilianSignup_aadhar.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/accountType.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/_login.jsp</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/Model/Civilian.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/ajax/checkOTP.jsp</file>
             <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/civilianSignup.jsp</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/_login.jsp</file>
             <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/ajax/sendOTP.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/Doctor/ajax/_addTreatment.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/Doctor/ajax/getHIForDoctor.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/js/DoctorDashBoard.js</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/doctorSignup.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/doctorSignup_detail.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/Controller/CivilianDAO.java</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/login.jsp</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/Controller/CommonDAO.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/Controller/HospitalDAO.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/LoginType.jsp</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/Model/Doctor.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/_addCivilian.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/_addDoctor.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/Header.jsp</file>
             <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/Controller/DoctorDAO.java</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/Doctor/ajax/getTreatments.jsp</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/js/location.js</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/js/index.js</file>
             <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/civilianSignup_detail.jsp</file>
             <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/js/signup.js</file>
-            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/ajax/isAadharExist.jsp</file>
             <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/mail/SendMail.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/ajax/checkHospitalOTP.jsp</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/_addHospital.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/src/java/Model/Hospital.java</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/ajax/sendHospitalOTP.jsp</file>
+            <file>file:/E:/Shri%20Vaishnav%20Vishwvidhyalay%20vidhyapith/Major%20Project/HealthID-System/web/hospitalSignup.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -1,3 +1,4 @@
+<%@page import="Controller.HospitalDAO"%>
 <%@page import="Controller.DoctorDAO"%>
 <%@page import="Model.Doctor"%>
 <html>
@@ -47,6 +48,17 @@
                         </div>
             
             <%
+            }
+            if(request.getParameter("Hospital") != null){
+               if(new HospitalDAO().getHospitalByEmail(UserID).getActive() == 1){
+                            response.sendRedirect("Hospital/DashBoard.jsp");
+            }else{%>
+                        <div class="LoginOut" >
+                            <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>
+                            <div class="Heading1" style="font-size: 14px;line-height: 22px;">Your Hospital ID is under verification. Please wait for verification process to complete by Government of India.</div>
+                            <div class="HeadingDescription">Try after sometime...</div>
+                        </div>
+<%}
             }
             %>
         </div>

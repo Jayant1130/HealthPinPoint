@@ -5,6 +5,7 @@
                 request.getServletPath().equals("/civilianSignup_detail.jsp") ||
                 request.getServletPath().equals("/doctorSignup.jsp") ||
                 request.getServletPath().equals("/civilianSignup.jsp") ||
+                request.getServletPath().equals("/hospitalSignup.jsp") ||
                 
                 request.getServletPath().equals("/doctorSignup_detail.jsp") ||
                 request.getServletPath().equals("/accountType.jsp") || 
@@ -15,6 +16,7 @@
         if(UserID == null && (request.getServletPath().equals("/civilianSignup_aadhar.jsp") ||
                 request.getServletPath().equals("/civilianSignup_detail.jsp") ||
                 request.getServletPath().equals("/doctorSignup.jsp") ||
+                request.getServletPath().equals("/hospitalSignup.jsp") ||
                 
                 request.getServletPath().equals("/civilianSignup.jsp") ||
                 request.getServletPath().equals("/doctorSignup_detail.jsp") ||
@@ -25,7 +27,7 @@
             <nav class="header">
 			<div class="header-logo"><img src="img/logo.png"/></div>
 			<div class="header-right">
-				<div class="link">Home</div>
+				<div class="link" onclick="window.location.href='index.jsp'">Home</div>
 				<div class="link" onclick="window.location.href='login.jsp'">Login</div>
 				<div class="link" onclick="window.location.href='accountType.jsp'">Generate ID</div>
 				<div class="link"><img style="width: 69px;" src="img/idlogo.svg"/></div>
