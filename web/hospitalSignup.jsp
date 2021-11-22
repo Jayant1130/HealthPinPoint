@@ -18,7 +18,7 @@
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include  file="Header.jsp"%>
         <div class="main">
-            <form action="_addHospital.jsp" method="post"  enctype="multipart/form-data" onsubmit="if(password.value.localeCompare(confirmpassword.value)==0){return CreateHospitalId(HName.value, Email.value, OTP.value )}else{alert('Password and confirm password must be same!'); return  false;}">
+            <form action="_addHospital.jsp" method="Post"  enctype="multipart/form-data" onsubmit="if(password.value.localeCompare(confirmpassword.value)==0){return CreateHospitalId(HName.value, Email.value, OTP.value )}else{alert('Password and confirm password must be same!'); return  false;}">
                 <div class="login">
                     <div class="lhead">Continue for Hospital ID</div>
                     <div class="lhead2">Hospital Id</div>
@@ -78,7 +78,7 @@
                         <div class="field">
                             <div class="fieldhead">Hospital Supporting Document<span style="color:red;">*(Only Image Formate)(Max File Size : 500 kb)</span></div>
                             <div class="fieldinput">
-                                <input  type="file" required  accept="image/*"  onchange="Filevalidation(this, 500)" max-size="500" name="AadharImage"></input></div>
+                                <input  type="file" required  accept="image/*"  onchange="Filevalidation(this, 500)" max-size="500" name="SDocuemnt"></input></div>
                         </div>
                         <input type="submit" class="button"  id ="verifymebutton" value="Verify Me!">
                         <div class="field" id ="otpfield" style="display: none;">

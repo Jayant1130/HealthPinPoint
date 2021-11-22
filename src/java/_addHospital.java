@@ -11,9 +11,11 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+@MultipartConfig(maxFileSize = 16177216)
 
 public class _addHospital extends HttpServlet {
     
@@ -49,12 +51,13 @@ public class _addHospital extends HttpServlet {
             d.setHospitalID(new HospitalDAO().getNextHospitalID());
             d.setHospitalName(request.getParameter("HName"));
             d.setCityID(Integer.parseInt(request.getParameter("City")));
+            d.setSDocument(request.getPart("SDocuemnt"));
             d.setEmail(request.getParameter("Email"));
             d.setAddress(request.getParameter("Address"));
             HospitalDAO hd = new HospitalDAO();
             CommonDAO cd = new CommonDAO();
             Login l = new Login();
-            l.setUserID(d.getHospitalID()+"");
+            l.setUserID(d.getEmail());
             l.setPassword(request.getParameter("password"));
             if(!hd.isHospitalEmailExist(d.getEmail())){
             if (hd.hospitalGenerateID(d) > 0 && cd.AddLoginID(l) >0) {

@@ -80,7 +80,7 @@ public class CommonDAO {
         String sql;
         sql = "select * from login where UserID = ? AND Password = ?";
         ps = con.prepareStatement(sql);
-        ps.setLong(1, Long.parseLong(UserID));
+        ps.setString(1, UserID);
         ps.setString(2, Password);
         rs = ps.executeQuery();
         if (rs.next()) {
