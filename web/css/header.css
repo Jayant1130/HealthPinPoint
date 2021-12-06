@@ -52,3 +52,10 @@ img {width: 100%;}
     color: white;
     font-family: monospace;
 }
+
+.No{
+    background: white;
+    padding: 10px;
+    font-size: 36px;
+    margin: 10;
+}

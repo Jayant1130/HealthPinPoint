@@ -21,6 +21,9 @@
             if(request.getParameter("Civilian") != null){
                 response.sendRedirect("Civilian/DashBoard.jsp");
             }
+            if(request.getParameter("Government") != null){
+                response.sendRedirect("Government/DashBoard.jsp");
+            }
             if(request.getParameter("CivilianDoctor") != null){
                 
                 if(new DoctorDAO().getDoctorByHealthID(UserID).getActive() == 1){
@@ -39,7 +42,8 @@
                             <div class="HeadingDescription">Go as Doctor</div>
                         </div>
 
-<%}
+<%
+    }
 %>
                         <div class="LoginOut" onclick="window.location.href='Civilian/DashBoard.jsp'">
                             <div class="HeadingLogo"><img src="https://www.pngrepo.com/png/284250/180/surgeon-doctor.png"></div>

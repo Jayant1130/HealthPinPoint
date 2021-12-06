@@ -54,7 +54,7 @@
                             <div class="Property">Trouble Table :</div>
                             <div class="Value"><%=hi.getTroubleTable()%></diV>                               
                         </div>
-                        <div class="TreatmentButton">Show Treatments</div>
+                        <div class="TreatmentButton">Treatments</div>
                         <div class="Treatments">
                             <%
                                

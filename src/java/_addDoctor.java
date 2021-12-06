@@ -49,8 +49,8 @@ public class _addDoctor extends HttpServlet {
             try {
             Doctor d = new Doctor();
             d.setSpe_in(request.getParameter("Spe_In"));
-            d.setClinicProof(request.getPart("ClinicProof"));
             d.setDegreeProof(request.getPart("DegreeProof"));
+            d.setClinicProof(request.getPart("ClinicProof"));
             d.setHealthID(request.getParameter("aadhar"));
             DoctorDAO dd = new DoctorDAO();
             Login l = new Login();

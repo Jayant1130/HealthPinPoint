@@ -1,3 +1,6 @@
+<%@page import="Model.DoctorAttached"%>
+<%@page import="Model.Hospital"%>
+<%@page import="Controller.HospitalDAO"%>
 <%@page import="Model.HealthIssue"%>
 <%@page import="Model.Civilian"%>
 <%@page import="Model.Doctor"%>
@@ -9,20 +12,21 @@
     CivilianDAO cid = new CivilianDAO();
     DoctorDAO dd = new DoctorDAO();
     HealthIssue h = cid.getHealthIssuesByID(Integer.parseInt(request.getParameter("HealthIssueID")));
-    String HealthID = (String) session.getAttribute("UserID");
-    Doctor d = dd.getDoctorByHealthID(HealthID);
+    String Email = (String) session.getAttribute("UserID");
+    //Doctor d = dd.getDoctorByHealthID(HealthID);
+            HospitalDAO hd = new HospitalDAO();
+            Hospital hospital = hd.getHospitalByEmail(Email);
     
 %>
 <div class="button-header">
     <div class="button" onclick="open_model('addTreatment');"> + Add Treatment </div>
     <div class="modelscreen" style="display:none;" id="addTreatment">
             <div class="model">
-                            <form id="addTreatmentForm<%=h.getHealthIssueID()%>" onsubmit="addTreatment(document.getElementById('addTreatmentForm<%=h.getHealthIssueID()%>'),'<%=h.getHealthID()%>', T<%=h.getHealthIssueID()%>, '<%=h.getHealthIssueID()%>');return false;" method="post">
+                            <form id="addTreatmentForm<%=h.getHealthIssueID()%>" onsubmit="addTreatmentH(document.getElementById('addTreatmentForm<%=h.getHealthIssueID()%>'),'<%=h.getHealthID()%>', T<%=h.getHealthIssueID()%>, '<%=h.getHealthIssueID()%>');return false;" method="post">
                                 <div class="modelHeader">Add Treatement</div>
                                 <input type="hidden" value="<%=h.getHealthIssueID()%>" name="HealthIssueID"/>
                                 <input type="hidden" value="<%=h.getHealthID()%>" name="HealthID"/>
-                                <input type="hidden" value="0" name="HospitalID"/>
-                                <input type="hidden" value="<%=d.getDoctorID()%>" name="DoctorID"/>
+                                <input type="hidden" value="<%=hospital.getHospitalID()%>" name="HospitalID"/>
                                 <div class="modelContent">
                                  <div class="field">
 			<div class="fieldhead">Diagnosis<span style="color:red;">*</span></div>
@@ -53,6 +57,23 @@
 			<div class="fieldhead">Operation Detail<span style="color:red;">*</span></div>
 			<div class="fieldinput">
 				<input placeholder="Operation Detail" name="OperationDetail" required  type="text"></input></div>
+			</div>
+                                    <div class="field">
+			<div class="fieldhead">Doctor<span style="color:red;">*</span></div>
+			<div class="fieldinput">
+                            <Select required name="DoctorID" >
+                                <option value="">Select Doctor</option>
+                                <%
+                            List<DoctorAttached> daa = hd.getDoctorAttachedByHospitalID(hospital.getHospitalID());
+                            int f = 0;
+                            for (DoctorAttached da : daa) {
+                                %>
+                                <option value="<%=da.getDoctorID()%>">Dr. <%=cid.getCivilianByID(dd.getDoctorByID(da.getDoctorID()).getHealthID()).getName().toUpperCase()%></option>
+                                <%
+                                
+                                }
+                                %>
+                            </Select></div>
 			</div>
                                 </div>
                                 <div class="modelFooter">

@@ -1,3 +1,4 @@
+<%@page import="Controller.AdminDAO"%>
 <%@page import="Controller.HospitalDAO"%>
 <%@page import="Controller.DoctorDAO"%>
 <%@page import="Controller.CivilianDAO"%>
@@ -11,14 +12,19 @@
     CivilianDAO cid = new CivilianDAO();
     DoctorDAO dd = new DoctorDAO();
     HospitalDAO hd = new HospitalDAO();
+    AdminDAO ad = new AdminDAO();
     if(cd.isCorrectLogin(UserID, Password)){
         String url = "./LoginType.jsp?";
         session.setAttribute("UserID", UserID);
-        if(hd.isHospitalEmailExist(UserID))
+        String t = ad.isAdminIDExist(UserID);
+    if(t != null){
+       url = url+t+"=1";
+        session.setAttribute("AccountType", t);
+    }else if(hd.isHospitalEmailExist(UserID))
         {
         session.setAttribute("AccountType", "Hospital");
        url = url+"Hospital=1";
-        }else{
+        }else if(!UserID.contains("@")){
         if(cid.isCivilianID(UserID) && !dd.isDoctorID(UserID)){
         session.setAttribute("AccountType", "Civilian");
             url = url+"Civilian=1";

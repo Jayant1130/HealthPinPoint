@@ -1,5 +1,3 @@
-<%@page import="Model.Hospital"%>
-<%@page import="Controller.HospitalDAO"%>
 <%@page import="Model.Doctor"%>
 <%@page import="Controller.DoctorDAO"%>
 <%@page import="Model.Civilian"%>
@@ -21,34 +19,21 @@
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
         <%            
-            String Email = (String) session.getAttribute("UserID");
-            HospitalDAO hd = new HospitalDAO();
-            Hospital h = hd.getHospitalByEmail(Email);
         %>
         <div class="main">
             <div class="DashBoard">
                 <%@include file="DashBoard_Options.jsp" %>
                 <div class="profile">
-                    <div class="profileinfo">
-                        
-                        <div class="profiledetail">
-                            <div class="Detail">
-                                <div class="Property">Hospital Name : </div>
-                                <div class="Value"><%=h.getHospitalName()%></diV>                               
-                            </div>
-                            <div class="Detail">
-                                <div class="Property">Address : </div>
-                                <div class="Value">  <%=h.getAddress()%></diV>                               
-                            </div>
-                            <div class="Detail">
-                                <div class="Property">E-mail: </div>
-                                <div class="Value">  <%=h.getEmail()%></diV>                               
-                            </div>
-                            
-                        </div>
-                    </div>
-                   
-
+                    <br>
+                    <br>
+                    <br>
+                    <h1>Welcome</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="header-logo"  style="
+    width: 206px;
+"><img src="../img/logo.png"/></div>
                 </div>
             </div>
         </div>

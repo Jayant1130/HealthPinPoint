@@ -30,7 +30,6 @@
 			<div class="fieldinput"><input placeholder="Password" required type="password" name="Password"></input></div>
                         </div>
                         <input type="submit" class="button" value="Submit">
-			<div class="forget">Forgot your Health ID</div>
 			</div>
 			</div>
 			

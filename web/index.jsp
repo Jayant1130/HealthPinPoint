@@ -20,7 +20,7 @@
 			<div class="headline-left">
 				<div class="h1">Generating  India's Health PinPoint</div>
 				<div class="h2">Health ID  - Key to your digital Healthcare Expedition</div>
-				<div class="button">Create your Health ID now</div>
+				<div class="button" onclick="window.location.href='accountType.jsp'">Create your Health ID now</div>
 			</div>
 			</div>
 			

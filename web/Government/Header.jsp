@@ -2,7 +2,7 @@
         String UserID = (String) session.getAttribute("UserID");
                 
         if(UserID == null && !(request.getServletPath().equals("/index.jsp") || request.getServletPath().equals("/login.jsp"))){
-            response.sendRedirect("./");
+            response.sendRedirect("../");
         }
         if(UserID == null && (request.getServletPath().equals("/index.jsp") || request.getServletPath().equals("/login.jsp"))){
            %>
@@ -25,7 +25,7 @@
 			<div class="header-right">
 				<div class="link">Home</div>
 				<div class="link" onclick="window.location.href='../logout.jsp'">Logout</div>
-				<div class="link">E-mail: <%=UserID.toUpperCase()%> </div>
+				<div class="link">HealthID : <%=UserID%> </div>
 				<div class="link"><img style="width: 69px;" src="../img/idlogo.svg"/></div>
 			</div>
                         

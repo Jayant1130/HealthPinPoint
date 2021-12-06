@@ -19,11 +19,8 @@
             <div class="DashBoard">
                 <%@include file="DashBoard_Options.jsp" %>
                 <div class="profile" ID="HIForDoctor">
-                    
-
                     <div class="login">
                         <div class="lhead">OptIN Patient</div>
-                
                         <div class="lhead3">
                             <div class="head4">Get Patient Details By HealthID</div>
                             <div class="field">
@@ -31,15 +28,9 @@
                                 <div class="fieldinput">
                                     <input placeholder="HealthID" id="aadhar"  minlength="12" name="aadhar" type="number"></input></div>
                             </div>
-                           
                             <input type="submit" class="button" value="Get Patient Details" onclick="getHIForDoctor(aadhar.value)"></div>
                     </div>
-
-
                 </div>
-                
-                
-                
             </div>
         </div>
         <%@include file="footer.jsp" %>	
@@ -49,4 +40,3 @@
 <script src="../js/signup.js"></script>
 <script src="../js/CivilianDashBoard.js"></script>
 <script src="../js/DoctorDashBoard.js"></script>
-

@@ -173,8 +173,9 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: white;
-    justify-content: center;
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    justify-content: revert;
     align-items: center;
 }
 

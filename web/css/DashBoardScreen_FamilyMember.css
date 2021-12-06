@@ -104,6 +104,7 @@
     border-radius: 10px;
     font-weight: bold;
     margin: 0 10px;
+    cursor: pointer;
     color: white;
 }
 
@@ -112,12 +113,36 @@
     background: linear-gradient(
 67deg, #006a7921, #91e0ec52);
     border-radius: 10px;
+    outline: 0;
     font-weight: bold;
     margin: 10px 0;
+    border: 0;
+    cursor: pointer;
     color: #2d77b5;
 }
 
 
+.Entreaty.hPatientcard {
+    width: 100%;
+    justify-content: inherit;
+    padding-left: 0;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 14px 14px 0 0;
+    margin: 10px 0;
+}
+
+.hPatient {
+    width: 72%;
+    text-align: center;
+    justify-content: center;
+}
+
+.hPatientcard .Entreatyinfo {
+    width: 59%;
+}
 
 
+.Entreaty.hPatientcard.hospitalRequest {padding: 12px 0 11px 0;}
 
+.hospitalRequest .Entreatyinfo {padding: 10px;}

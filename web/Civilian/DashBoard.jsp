@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../css/Home.css">
         <link rel="stylesheet" href="../css/login.css">
         <link rel="stylesheet" href="../css/CivilianDashBoard.css">
+        <link rel="stylesheet" href="../css/DashBoardScreen_FamilyMember.css">
     </head>
     <body onload="setInterval(Loader, 500); setLoader(0);">
         <%@include file="Header.jsp" %>
@@ -25,7 +26,6 @@
                 <div class="profile">
                     <div class="button-header">
                         <div class="button" onclick="getRequestModel();open_model('EntreatyScreen');"> -> Family Entreaty </div>
-                        <div class="button" onclick="open_model('EntreatyScreen');"> Update </div>
                         <div class="modelscreen" style="display:none;" id="EntreatyScreen">
                         </div>
                     </div>
